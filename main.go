@@ -1,13 +1,15 @@
 package ttt
 
 import (
-	"fmt"
+	log "github.com/sirupsen/logrus"
 	"time"
 )
 
 func main() {
 	for {
 		time.Sleep(1 * time.Second)
-		fmt.Println(time.Now())
+		log.WithFields(log.Fields{
+	           "animal": "walrus",
+	        }).Info("A walrus appears")
 	}
 }
